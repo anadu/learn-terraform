@@ -72,3 +72,5 @@ variable "kis" {}
 output "tfvars" {
   value = var.kis 
 }
+
+variable "env"{}
