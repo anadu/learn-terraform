@@ -54,3 +54,15 @@ variable "map" {
 output "map" {
   value = var.map["cloud"]
 }
+
+# for example we have declared the variable 
+
+variable "new"{
+  default = "manoj"
+}
+
+# above we have declared the variable but we are accessing the variable it has some combination with string to do decalrae the variable like this ${}
+
+output "string" {
+  value = ${var.new}- john
+}
