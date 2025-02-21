@@ -11,3 +11,7 @@ variable "count1" {
   default = ["banna","ornage"] 
 
 }
+
+output "check" {
+  value = null_resource.test
+}
