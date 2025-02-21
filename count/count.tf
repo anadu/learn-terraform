@@ -8,7 +8,7 @@ resource "null_resource" "test"{
 }
 
 variable "count1" {
-  default = ["apple","banna","ornage","green"] 
+  default = ["red","apple","banna","ornage","green"] 
 
 }
 
