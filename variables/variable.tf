@@ -43,3 +43,10 @@ variable "list" {
 output "list" {
   value = var.list[1]
 }
+
+variable "map" {
+  default = {
+    coure = "devops"
+    cloud = "azure"
+  }
+}
