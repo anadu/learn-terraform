@@ -1,19 +1,13 @@
 module "frontend" {
   source = "./module"
-  component = var.component
+  component = "frontend"
 
 }
 
-variable "component" {
-  default = "frontend"
 
-}
 
 module "catalogue" {
   source = "./module"
-  component = var.component
+  component = "catalogue"
 }
 
-variable "component" {
-    default = "catalogue"
-}
