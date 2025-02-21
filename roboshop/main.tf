@@ -1,6 +1,6 @@
 module "frontend" {
   source = ./module
-  component=var.component
+  component = var.component
 
 }
 

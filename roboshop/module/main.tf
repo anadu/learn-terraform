@@ -1,3 +1,12 @@
+data "azurerm_resource_group" "example" {
+  name = "terraform"
+}
+
+data "azurerm_subnet" "example" {
+  name                 = "default"
+  virtual_network_name = "terraformvnet"
+  resource_group_name  =  data.azurerm_resource_group.example.name
+
 resource "azurerm_network_interface" "example" {
   name                = "${var.component}-robo"
   location            = data.azurerm_resource_group.example.location
