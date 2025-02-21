@@ -50,3 +50,7 @@ variable "map" {
     cloud = "azure"
   }
 }
+
+output "map" {
+  value = var.map["cloud"]
+}
