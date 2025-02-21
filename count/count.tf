@@ -8,7 +8,7 @@ resource "null_resource" "test"{
 }
 
 variable "count1" {
-  default = ["banna","ornage"] 
+  default = ["apple","banna","ornage"] 
 
 }
 
