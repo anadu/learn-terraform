@@ -63,6 +63,6 @@ variable "new"{
 
 # above we have declared the variable but we are accessing the variable it has some combination with string to do decalrae the variable like this ${}
 
-output "string" {
-  value = ${var.new}- john
+output "str" {
+  value = "${var.new}- john"
 }
