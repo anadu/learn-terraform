@@ -1,3 +1,8 @@
 resource null_resource "test"{
-    count = 10
+    count =length(var.count)
+}
+
+variable "count" {
+  default = ["banna","ornage"] 
+
 }
