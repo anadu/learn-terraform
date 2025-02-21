@@ -12,6 +12,3 @@ variable "count1" {
 
 }
 
-output "check" {
-  value = null_resource.test
-}
