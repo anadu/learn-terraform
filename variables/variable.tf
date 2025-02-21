@@ -24,3 +24,22 @@ output "a2" {
 output "boolean" {
   value = var.boolean
 }
+
+# data types
+# string
+# number
+# boolean
+
+#varaibles types
+#plain
+#list
+#map
+
+variable "list" {
+  default = ["kishore",2,true]
+  
+}
+
+output "list" {
+  value = var.list[1]
+}
