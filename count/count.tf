@@ -2,7 +2,7 @@ resource "null_resource" "test"{
   count =length(var.count1)
   
   provisioner "local-exec" {
-  command = "echo ${var.count1[count1.index]}"  
+  command = "echo ${var.count1[count.index]}"  
   
   }  
 }
