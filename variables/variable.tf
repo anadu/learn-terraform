@@ -66,3 +66,9 @@ variable "new"{
 output "str" {
   value = "${var.new}- john"
 }
+
+variable "kis" {}
+
+output "tfvars" {
+  value = var.kis 
+}
