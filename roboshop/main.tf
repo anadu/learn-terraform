@@ -1,13 +1,27 @@
 module "frontend" {
+  for_each = var.components  
   source = "./module"
-  component = "frontend"
+  component = each.value ["name"]
+  vmsize    = each.value["vmsize"]
 
 }
-
-
-
-module "catalogue" {
-  source = "./module"
-  component = "catalogue"
+ 
+variable "components" {
+   default = {
+    frontend ={
+       name = "cataalogue"
+       vmsize = "Standard_DS1_v2" 
+    }
+   } 
 }
+
+variable "components" {
+   default = {
+    frontend ={
+       name = "mongo"
+       vmsize = "Standard_DS1_v2" 
+    }
+   } 
+}
+
 
