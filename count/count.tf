@@ -9,6 +9,16 @@ resource "null_resource" "test"{
 
 variable "count1" {
   default = ["red","apple","banna","ornage","green"] 
-
 }
 
+resource "local_file" "foo" {
+  count = length(var.list)
+
+  content  = "${var.list[count.index]}"
+  filename = "tmp/file-${count.index}"
+}
+
+
+variable "list" {
+  default = ["kishore","manoj"]
+}
