@@ -17,5 +17,7 @@ variable "components" {
       name = "catalogue"
       vmsize = "Standard_DS1_v2" 
     }
+ }
 }
+
 
