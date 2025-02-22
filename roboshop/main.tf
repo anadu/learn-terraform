@@ -8,20 +8,14 @@ module "frontend" {
  
 variable "components" {
    default = {
-    frontend ={
-       name = "cataalogue"
+    frontend = {
+       name = "frontend"
        vmsize = "Standard_DS1_v2" 
     }
-   } 
-}
-
-variable "components" {
-   default = {
-    frontend ={
-       name = "mongo"
-       vmsize = "Standard_DS1_v2" 
+   
+    mongo = {
+      name = "catalogue"
+      vmsize = "Standard_DS1_v2" 
     }
-   } 
 }
-
 
