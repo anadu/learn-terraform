@@ -15,7 +15,7 @@ resource "local_file" "foo" {
   count = length(var.list)
 
   content  = "${var.list[count.index]}"
-  filename = "tmp/file-${count.index}"
+  filename = "/tmp/file-${count.index}"
 }
 
 
