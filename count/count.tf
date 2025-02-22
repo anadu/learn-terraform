@@ -20,5 +20,5 @@ resource "local_file" "foo" {
 
 
 variable "list" {
-  default = ["rashmika","kishore","manoj"]
+  default = ["rashmika","kishore","manoj","super"]
 }
