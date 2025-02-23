@@ -20,6 +20,17 @@ resource "azurerm_network_interface" "example" {
   }
 }
 
+resource "azurerm_public_ip" "example" {
+  name                = var.component
+  resource_group_name = data.azurerm_resource_group.example.name
+  location            = data.azurerm_resource_group.example.location
+  allocation_method   = "Static"
+
+  tags = {
+    environment = "Production"
+  }
+}
+
 resource "azurerm_virtual_machine" "main" {
   name                  = var.component
   location              = data.azurerm_resource_group.example.location
