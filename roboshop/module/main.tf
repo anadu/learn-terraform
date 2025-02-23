@@ -28,14 +28,38 @@ resource "azurerm_public_ip" "example" {
   allocation_method   = "Static"
 
   tags = {
-    environment = "Production"
+    environment = var.component
   }
 }
+resource "azurerm_network_interface_security_group_association" "example" {
+  network_interface_id      = azurerm_network_interface.example.id
+  network_security_group_id = azurerm_network_security_group.example.id
+}
+resource "azurerm_network_security_group" "example" {
+  name                = "acceptanceTestSecurityGroup1"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
 
+  security_rule {
+    name                       = "test123"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = {
+    environment = var.component
+  }
+}
 resource "azurerm_virtual_machine" "main" {
   name                  = var.component
-  location              = data.azurerm_resource_group.example.location
-  resource_group_name   = data.azurerm_resource_group.example.name
+  resource_group_name = data.azurerm_resource_group.example.name
+  location            = data.azurerm_resource_group.example.location
   network_interface_ids = [azurerm_network_interface.example.id]
   vm_size               = "Standard_DS1_v2"
 
@@ -60,6 +84,6 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
   tags = {
-    component= "staging"
+    component= var.component
   }
 } 
