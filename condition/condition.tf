@@ -6,5 +6,5 @@ output "var"{
 
 
 resource "null_resource" "resource"{
-  count = var.a == 9 ? 1 : 0  
+  count = var.a > 10 ? 1 : 0  
 }
