@@ -4,7 +4,7 @@ data "azurerm_resource_group" "example" {
 
 data "azurerm_subnet" "example" {
   name                 = "default"
-  virtual_network_name = "terraformvnet"
+  virtual_network_name = "terraform-vnet"
   resource_group_name  =  data.azurerm_resource_group.example.name
 }
 
