@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "example" {
-  name = "terraform"
+  name = "terraformvnet"
 }
 
 data "azurerm_subnet" "example" {
