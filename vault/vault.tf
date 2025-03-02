@@ -11,3 +11,5 @@ provider "vault" {
 data "vault_kv_secret" "secret_data" {
   path = "/test/data/demo-ssh"
 }
+
+variable "token"{}
