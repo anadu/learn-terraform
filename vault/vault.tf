@@ -6,6 +6,7 @@ provider "vault" {
   # This will default to using $VAULT_ADDR
   # But can be set explicitly
   address = "https://172.174.242.161:8200"
+  token   = var.token
 }
 
 data "vault_kv_secret" "secret_data" {
