@@ -14,3 +14,8 @@ data "vault_kv_secret" "secret_data" {
 }
 
 variable "token"{}
+
+
+output "vault" {
+  value=data.vault_kv_secret.secret_data  
+}
