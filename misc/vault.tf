@@ -9,23 +9,16 @@ provider "vault" {
   token   = var.token
 }
 
-resource "vault_mount" "kvv1" {
-  path        = "kvv1"
-  type        = "kv"
-  options     = { version = "1" }
-  description = "KV Version 1 secret engine mount"
+variable "token" {}
+
+module "vault" {
+  source = "./create-secrets" 
+  kv_path = each.key
 }
 
 
-resource "vault_kv_secret" "secret" {
-  path = "${vault_mount.kvv1.path}/secret"
-  data_json = jsonencode(
-  {
-    zip = "zap",
-    foo = "bar"
-  }
-  )
+variable "secrets" {
+  default = {
+    infra {}
+  }  
 }
-
-
-variable "token"{}
