@@ -16,5 +16,5 @@ variable "token"{}
 
 resource "local_file" "test" {
   filename = "/tmp/pass"
-  content = data.vault_generic_secret.rundeck_auth.data[password]
+  content = data.vault_generic_secret.rundeck_auth.data["password"]
 }
