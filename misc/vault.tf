@@ -19,6 +19,6 @@ module "vault" {
 
 variable "secrets" {
   default = {
-    infra {}
+    infra = {}
   }  
 }
