@@ -12,7 +12,8 @@ provider "vault" {
 variable "token" {}
 
 module "vault" {
-  source = "./create-secrets" 
+  source = "./create-secrets"
+  for_each = var.secrets 
   kv_path = each.key
 }
 
