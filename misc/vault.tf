@@ -13,7 +13,8 @@ resource "vault_mount" "main" {
   path        = "secret/foo"
   type        = "kv"
   options     = { version = "1" }
-  description = var.kv_path
+  description = "kishore"
+}
 
 
 
