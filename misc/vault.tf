@@ -19,3 +19,6 @@ resource "vault_generic_secret" "example" {
 }
 EOT
 }
+
+
+variable "token"{}
