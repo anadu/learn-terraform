@@ -17,4 +17,15 @@ resource "vault_mount" "kvv1" {
 }
 
 
+resource "vault_kv_secret" "secret" {
+  path = "${vault_mount.kvv1.path}/secret"
+  data_json = jsonencode(
+  {
+    zip = "zap",
+    foo = "bar"
+  }
+  )
+}
+
+
 variable "token"{}
