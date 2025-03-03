@@ -10,7 +10,7 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "rundeck_auth" {
-  path = "/test/data/kishore"
+  path = "/test/kishore"
 }
 variable "token"{}
 
