@@ -9,6 +9,14 @@ provider "vault" {
   token   = var.token
 }
 
+resource "vault_mount" "main" {
+  path        = "secret/foo"
+  type        = "kv"
+  options     = { version = "1" }
+  description = var.kv_path
+
+
+
 resource "vault_generic_secret" "example" {
   path = "secret/foo"
 
