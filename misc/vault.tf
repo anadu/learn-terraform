@@ -9,24 +9,11 @@ provider "vault" {
   token   = var.token
 }
 
-resource "vault_mount" "main" {
-  path        = "secret/foo"
+resource "vault_mount" "kvv1" {
+  path        = "kvv1"
   type        = "kv"
   options     = { version = "1" }
-  description = "kishore"
-}
-
-
-
-resource "vault_generic_secret" "example" {
-  path = "secret/foo"
-
-  data_json = <<EOT
-{
-  "foo":   "bar",
-  "pizza": "cheese"
-}
-EOT
+  description = "KV Version 1 secret engine mount"
 }
 
 
