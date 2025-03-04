@@ -5,7 +5,7 @@ provider "vault" {
   #
   # This will default to using $VAULT_ADDR
   # But can be set explicitly
-  address = "http://20.124.84.177:8200"
+  address = "http://172.203.217.40/:8200"
   token   = var.token
 }
 
@@ -15,11 +15,15 @@ module "vault" {
   source = "./create-secrets"
   for_each = var.secrets 
   kv_path = each.key
+  
 }
 
 
 variable "secrets" {
   default = {
-    infra = {}
+    infra = {
+     ssh = {
+        
+     }   
   }  
 }
