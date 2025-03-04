@@ -1,4 +1,4 @@
-resource "vault_mount" "kvv1" {
+resource "vault_mount" "main" {
   path        = var.kv_path
   type        = "kv"
   options     = { version = "1" }
